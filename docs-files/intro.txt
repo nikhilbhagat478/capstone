@@ -1,0 +1,1 @@
+this is the basic website for understanding the login logout system in core php.
