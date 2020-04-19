@@ -8,6 +8,7 @@
 ?>
 
 <?php include 'header.php' ?>
+<?php include 'navbar.php'; ?>
 	
 	<div class="conatiner">
 		<div class="row">
@@ -21,32 +22,25 @@
 		<h4>Store Name - <?php echo $data['store_name'] ?></h4>
 		<h4>Contact Number - <?php echo $data['store_contact'] ?></h4>
 		<h4>Address - <?php echo $data['store_address'] ?></h4>
-		<table class="table table-hover">
+		<table class="table">
 			<tr>
-				<th>Serial Number</th>
-				<th>Medicines Name</th>
+				<th>Medicines Available</th>
 				<th>Price</th>
 			</tr>
 			<?php
 				$medicineArray = explode(',', $data['store_stock']);
 				$priceListArray = explode(',', $data['price_list']);
 				$i=1;
-
-				foreach ($medicineArray as $medicines)
-				{
-					?>
-						<tr>
-							<td><?php echo $i++ ?></td>
-							<td><?php echo $medicines ?></td>
-					<?php
-				}
-				foreach ($priceListArray as $price)
-				{
-					?>
-							<td><?php echo $price ?></td>
-						</tr>
-					<?php
-				}	
+				?>
+					<tr>
+					 	<td>
+							<?php foreach ($medicineArray as $medicines) { echo $medicines."<br>"; } ?>
+						</td>
+						<td>
+							<?php foreach ($priceListArray as $price) { echo $price."<br>"; } ?>
+						</td>
+					</tr><br>
+				<?php
 			?>
 		</table>
 		<br>

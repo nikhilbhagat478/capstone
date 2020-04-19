@@ -40,6 +40,7 @@ if(isset($_SESSION['id'])) {
 ?>
 
 <?php include 'header.php' ?>
+<?php include 'navbar.php'; ?>
 
 	<div class="container">
 		<div class="row">

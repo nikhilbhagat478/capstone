@@ -14,6 +14,7 @@ else
 ?>
 
 <?php include 'header.php' ?>
+<?php include 'navbar.php'; ?>
 
 <div class="conatiner">
 	<div class="col-sm-12">
@@ -31,6 +32,9 @@ else
 			<th>serial number</th>
 			<th>Medicines</th>
 			<th>Total Price</th>
+			<th>Ordered Time</th>
+			<th>Estimated Arrival Time</th>
+			<th>Action</th>
 		</thead>
 		<tbody>
 			<?php
@@ -41,9 +45,12 @@ else
 					{
 						?>
 							<tr>
-								<th><?php echo $i++ ?></th>
-								<th><?php echo $data['medicines'] ?></th>
-								<th>price here</th>
+								<td><?php echo $i++ ?></td>
+								<td><?php echo $data['medicines'] ?></td>
+								<td>Total Price Here</td>
+								<td><?php echo $data['ordered_date'] ?></td>
+								<td><?php echo $data['arrival_date'] ?></td>
+								<td><a href="cancel-order.php?order_id=<?php echo $data['order_id'] ?>" class="btn btn-danger btn-sm">Cancel Order</a></td>
 							</tr>
 						<?php
 					}

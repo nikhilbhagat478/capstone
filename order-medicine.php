@@ -25,8 +25,10 @@ else
 		$customerAddress = $_POST['customer_address'];
 		$medicines = $_POST['medicines'];
 		$orderStore = $_POST['order_store'];
+		$orderedDate = date('Y-m-d');
+		$arrivalDate = date('Y-m-d' , strtotime('+3 day'));
 
-		$sql = "INSERT INTO `orders`(`customer_name`, `customer_contact`, `customer_address`, `medicines`, `order_store` , `user_id`) VALUES ('$customerName','$userContact','$customerAddress','$medicines','$orderStore' , '$userId')";
+		$sql = "INSERT INTO `orders`(`customer_name`, `customer_contact`, `customer_address`, `medicines`, `order_store` , `user_id` , `ordered_date` , `arrival_date`) VALUES ('$customerName','$userContact','$customerAddress','$medicines','$orderStore' , '$userId' , '$orderedDate' , '$arrivalDate')";
 		$run = $conn->query($sql);
 		if($run=true)
 		{
@@ -48,6 +50,7 @@ else
 ?>
 
 <?php include 'header.php' ?>
+<?php include 'navbar.php'; ?>
 
 <div class="container">
 	<div class="row">
